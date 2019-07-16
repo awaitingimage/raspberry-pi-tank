@@ -10,8 +10,9 @@
     "express": "^4.17.1"
   },
   "scripts": {
-    "serve": "node --experimental-modules index.js",
-    "lint": "eslint **.js --fix"
+    "serve": "cd client && yarn run build && cd .. && node --experimental-modules index.js",
+    "lint": "eslint **.js --fix",
+    "start": "yarn --cwd client react-scripts start"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
