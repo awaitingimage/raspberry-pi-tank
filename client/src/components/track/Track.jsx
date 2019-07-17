@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { slider } from "./Slider.module.scss";
+import { track } from "./Track.module.scss";
 
-class Slider extends Component {
+class Track extends Component {
   constructor(props) {
     super(props);
     this.state = { value: 0, interval: {} };
@@ -13,7 +13,7 @@ class Slider extends Component {
     let interval = setInterval(this.loop, 15);
     this.setState({ interval });
   };
-  sliderChange = event => {
+  trackChange = event => {
     clearInterval(this.state.interval);
     this.setState({ value: parseInt(event.target.value) });
   };
@@ -29,12 +29,12 @@ class Slider extends Component {
   render() {
     return (
       <input
-        className={slider}
+        className={track}
         type="range"
         min="-255"
         max="255"
         value={this.state.value}
-        onChange={this.sliderChange}
+        onChange={this.trackChange}
         onMouseUp={this.setLoop}
         onTouchEnd={this.setLoop}
       />
@@ -42,4 +42,4 @@ class Slider extends Component {
   }
 }
 
-export default Slider;
+export default Track;

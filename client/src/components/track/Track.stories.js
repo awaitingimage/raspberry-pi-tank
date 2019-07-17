@@ -1,9 +1,9 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import Slider from "./Slider";
+import Track from "./Track";
 
-storiesOf("Slider", module).add("initial", () => <Slider />);
+storiesOf("Track", module).add("initial", () => <Track />);
 
 //   .add("default", () => <Task task={task} {...actions} />)
 //   .add("pinned", () => (

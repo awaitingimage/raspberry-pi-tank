@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Slider from "./components/slider/Slider";
+import Track from "./components/track/Track";
 
 function App() {
   window.scrollTo(0, 1);
@@ -11,10 +11,10 @@ function App() {
   return (
     <div className="App">
       <div className="left-track">
-        <Slider></Slider>
+        <Track></Track>
       </div>
       <div className="right-track">
-        <Slider></Slider>
+        <Track></Track>
       </div>
     </div>
   );
