@@ -1,26 +1,21 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Slider from "./components/slider/Slider";
 
 function App() {
+  window.scrollTo(0, 1);
+  console.log("adasdasd");
+  document.body.ontouchend = e => {
+    e.preventDefault();
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="left-track">
         <Slider></Slider>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
+      <div className="right-track">
+        <Slider></Slider>
+      </div>
     </div>
   );
 }
