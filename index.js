@@ -5,14 +5,13 @@ import pigpio from "pigpio";
 const Gpio = pigpio.Gpio;
 
 let app = express();
+const expressWs2 = expressWs(app);
+app = expressWs2.app;
 const port = 4000;
 
 const enabler = new Gpio(17, { mode: Gpio.OUTPUT });
 const input1 = new Gpio(27, { mode: Gpio.OUTPUT });
 const input2 = new Gpio(22, { mode: Gpio.OUTPUT });
-
-const expressWs2 = expressWs(app);
-app = expressWs2.app;
 
 app.use("/favicon.ico", express.static("favicon.ico"));
 
