@@ -18,14 +18,17 @@ app.use("/favicon.ico", express.static("favicon.ico"));
 // Serve the static files from the React app
 app.use(express.static(`${path.resolve()}/client/build/`));
 
-app.get("*", (req, res) => {
-  res.sendFile(`${path.resolve()}/client/build/index.html`);
+app.ws("/", function(ws, req) {
+  ws.send("connected");
+  ws.on("message", function(message) {
+    let data = JSON.parse(message);
+    console.log(data);
+    if (data.track == "right") changeMotor(data.value);
+  });
 });
 
-app.ws("/", function(ws, req) {
-  ws.on("message", function(motorValue) {
-    changeMotor(motorValue);
-  });
+app.get("*", (req, res) => {
+  res.sendFile(`${path.resolve()}/client/build/index.html`);
 });
 
 function changeMotor(motorValue) {

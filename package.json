@@ -13,6 +13,7 @@
   },
   "scripts": {
     "serve": "cd client && yarn run build && cd .. && node --experimental-modules index.js",
+    "host": "node --experimental-modules index.js",
     "lint": "eslint **.js --fix",
     "start": "yarn --cwd client react-scripts start"
   },

@@ -26,6 +26,11 @@ class Track extends Component {
       clearInterval(this.state.interval);
     }
   };
+  componentWillUpdate(nextProps, nextState) {
+    if (nextState !== this.state) {
+      this.props.changed(nextState.value, nextProps.id);
+    }
+  }
   render() {
     return (
       <input
